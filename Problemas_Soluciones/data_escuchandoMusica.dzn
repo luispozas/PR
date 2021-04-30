@@ -1,0 +1,11 @@
+% Numero canciones
+N = 4;
+% Tiempo ida
+t1 = 20;
+% Tiempo vuelta
+t2 = 15;
+% Tiempos duracion - satisfaccion
+dur_sat = [| 15, 7
+           | 10, 10
+           |  5, 6
+           | 10, 8  |]; 

@@ -1,0 +1,40 @@
+% Numero de dias.
+D = 30;
+% Numero de trabajadores.
+T = 4;
+% Numero de trabajadores en cada turno.
+N1 = 1;
+N2 = 1;
+N3 = 1;
+
+% Numero maximo dias consecutivos (nadie trabaja MaxDT dias consecutivos).
+MaxDT = 6;
+% Numero maximo dias libres (nadie tiene MaxDL dias libres consecutivos).
+MaxDL = 3;
+% Numero minimo dias trabajados (todos trabajan como minimo MinDT en los D dias).
+MinDT = 22;
+
+% Trabajadores afines 
+% (cada trabajador de un turno tiene que estar con al menos A trabajadores afines en ese turno) .
+A = 0;
+
+afin = [ {2, 3} %1
+        ,{1, 3, 4} %2
+        ,{1, 2, 4} %3
+        ,{2, 3} %4
+        ]; 
+
+% Categorias de los trabajadores.
+C = 1;
+categ = [1, 1, 1, 1];
+
+% Dias consecutivos sin trabajar por cada trabajador.
+diasLibres = [0, 3, 2, 0];
+
+% Turno odiado por cada trabajador para cada día.
+% 0 -> ninguno | 1 -> Turno1 | 2 -> Turno2 | 3 -> Turno3
+turnoLibre = [| 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+              | 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+              | 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+              | 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+              |];

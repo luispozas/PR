@@ -1,0 +1,4 @@
+tam = 5;
+num_col = 3;
+con_max = 7;
+consumo = [2, 1, 3];

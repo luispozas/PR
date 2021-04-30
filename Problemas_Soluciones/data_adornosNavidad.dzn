@@ -1,0 +1,6 @@
+num_obj = 4;
+presupuesto = 10;
+cost_sup = [|4, 2
+            |3, 4
+            |5, 5
+            |2, 1|];
