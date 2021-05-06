@@ -10,7 +10,7 @@ array [1..N+1] of var 0..3: MB;
 
 constraint CA[1] = 3 /\ MA[1] = 3;
 
-constraint exists(i in 2..N+1) (CB[i] = 3 /\ MB[i] = 3);
+constraint CB[N+1] = 3 /\ MB[N+1] = 3;
 
 constraint forall(i in 1..N+1)(if(MA[i] > 0 /\ MB[i] > 0) then (CA[i] <= MA[i] /\ CB[i] <= MB[i]) endif);
 
