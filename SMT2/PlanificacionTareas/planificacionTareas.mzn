@@ -32,6 +32,6 @@ constraint forall(i in 1..T) ((asig[i] + duracion[i]) < Lim);
 
 constraint forall(t in 1..T) ( forall(i in 1..T where dep[t, i] = 1)(asig[i]+duracion[i] <= asig[t]) );
 
-solve minimize max(i in 1..T) (asig[i]);
+solve minimize max(i in 1..T) (asig[i]+duracion[i]);
 
 %solve satisfy;

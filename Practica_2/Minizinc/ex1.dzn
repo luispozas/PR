@@ -1,0 +1,37 @@
+numMeses = 12;
+tiposAceite = 5;
+
+precios = [|110,120,130,110,115
+            |130,130,110,90,115
+            |110,140,130,100,95
+            |120,110,120,120,125
+            |100,120,150,110,105
+            |90,100,140,80,135
+            |95,120,130,85,130
+            |110,130,150,100,125
+            |100,110,130,110,115
+            |130,140,140,100,135
+            |100,110,120,90,100
+            |120,100,110,120,125|];
+
+VALOR = 400;
+%Maximo de aceite a refinar por tipo
+MAXV = 200;
+MAXN = 250;
+
+MCAP = 1000;
+
+precioMes = 3;
+%Durezas
+durezasAceite = [8.8,6.1,2.0,4.2,5.0];
+%Minima y maxima dureza
+MinD = 3;
+MaxD = 6;
+%Cantidad al principio de aceite
+cantidadPrincipio = 200;
+%Minimo beneficio
+MinB = 1500;
+
+K = 3;
+
+T = 20;
