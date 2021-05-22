@@ -127,7 +127,7 @@ def minimize(w):
 print("(set-option :produce-models true)")
 #print(setlogic("QF_LIA"))
 
-#declaración de variables de la solución
+#Declaración de variables de la solucion
 for i in range(meses):
     for j in range(aceites):
         print(intvar(compra(i, j)))
@@ -177,11 +177,13 @@ for i in range(1, meses):
 for j in range(aceites):
     print(addassert(addeq(str(inicio[j]), almacen(meses-1, j))))
 
-#El siguiente constraint:
-# 'constraint forall(i in 1..meses) 
+# --------------------------------------------------------------------------------
+#   El siguiente constraint:
+#       'constraint forall(i in 1..meses) 
 #               (comprobarDureza(sum(j in 1..aceites)(refina[i,j]*durezas[j]), 
 #                                sum(j in 1..aceites)(refina[i,j])));' 
-# lo divido en dos mas simples de traducir a SMT2 que son los siguientes...
+#   lo divido en dos mas simples de traducir a SMT2 que son los siguientes...
+# --------------------------------------------------------------------------------
 
 #constraint forall(i in 1..meses) (sum(j in 1..aceites)(refina[i,j]*durezas[j]) >= MinD*sum(j in 1..aceites)(refina[i,j]));
 #constraint forall(i in 1..meses) (sum(j in 1..aceites)(refina[i,j]*durezas[j]) <= MaxD*sum(j in 1..aceites)(refina[i,j]));
@@ -195,9 +197,11 @@ for i in range(meses):
     print(addassert(addle(addsum(sumaMinD), addmul(str(maxD), addsum(sumaMaxD)))))
 
 
-# El siguiente constraint:
-# 'constraint (calcularBeneficio() - calcularGastos()) >= MinB;'
-# lo tranformo a los siguientes:
+# --------------------------------------------------------------------------------
+#   El siguiente constraint:
+#       'constraint (calcularBeneficio() - calcularGastos()) >= MinB;'
+#   lo tranformo a los siguientes:
+# --------------------------------------------------------------------------------
 
 #constraint (sum(i in 1..meses, j in 1..aceites)(refina[i,j]*VALOR)) - 
 #           (sum(i in 1..meses, j in 1..aceites)(almacen[i,j]*CA + compra[i,j]*precios[i,j])) 
